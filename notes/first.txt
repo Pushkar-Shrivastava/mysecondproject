@@ -1,0 +1,31 @@
+1) I first did `ng new mysecondproject` to create my project.
+2) then i did `npm install --save -dev materialize-css jquery`.
+3) I then linked the css and js by adding paths in angular.json under mysecondproject tree :-
+`
+"styles": [
+              "src/styles.css",
+              "node_modules/materialize-css/dist/css/materialize.min.css",
+              "node_modules/material-design-icons/iconfont/material-icons.css"
+            ],
+            "scripts": ["node_modules/jquery/dist/jquery.min.js",
+              "node_modules/materialize-css/dist/js/materialize.min.js"]
+`
+for materialize-css icons, added this link inside header tag of index.html.  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+4) i create components as such :- header,footer, pages/dashboard, pages/firstpage, pages/secondpage, pages/thirdpage.
+    every pages has a structure as 
+    `
+    <app-header></app-header>
+        <!----main body-->
+
+
+        <!----main body-->
+    <app-footer></app-footer>
+
+    `
+ 5) I then copied code for header,footer from https://materializecss.com/navbar.html   https://materializecss.com/footer.html. added css for footer in app.component.ts and added js,css code for header in header.component.ts,header.component.css.
+
+ 6) for routing:-
+    1) add `<router-outlet></router-outlet>` in app.component.html.
+    2) create app-routing.module.ts under app folder and imported it into our app.module.ts.
+    3) see app-routing.module.ts file.
+    4) to create rout link, use ` routerLink="/" routerLinkActive="active" ` attribute in your <a> tags, by replacing href attribute. see header component.
